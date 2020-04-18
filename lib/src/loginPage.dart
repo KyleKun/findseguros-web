@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackagr1d_web/src/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:hackagr1d_web/src/profilePage.dart';
 import 'Widget/bezierContainer.dart';
 
 class LoginPage extends StatefulWidget {
@@ -61,7 +61,12 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _submitButton() {
-    return Container(
+    return InkWell(
+      onTap: () {
+        Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()));
+      },
+      child:Container(
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.symmetric(vertical: 15),
       alignment: Alignment.center,
@@ -81,6 +86,7 @@ class _LoginPageState extends State<LoginPage> {
       child: Text(
         'Login',
         style: TextStyle(fontSize: 20, color: Colors.white),
+      ),
       ),
     );
   }
@@ -121,23 +127,14 @@ class _LoginPageState extends State<LoginPage> {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-          text: 'T',
-          style: GoogleFonts.portLligatSans(
+          text: 'ENTRAR',
+          style: GoogleFonts.alice(
             textStyle: Theme.of(context).textTheme.display1,
-            fontSize: 30,
+            fontSize: 42,
             fontWeight: FontWeight.w700,
             color: Color(0xffd896ff),
           ),
-          children: [
-            TextSpan(
-              text: 'es',
-              style: TextStyle(color: Colors.black, fontSize: 30),
-            ),
-            TextSpan(
-              text: 'te',
-              style: TextStyle(color: Color(0xffd896ff), fontSize: 30),
-            ),
-          ]),
+        ),
     );
   }
 

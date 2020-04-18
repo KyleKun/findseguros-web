@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hackagr1d_web/src/Widget/bezierContainer.dart';
 import 'package:hackagr1d_web/src/loginPage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'profilePage.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key key, this.title}) : super(key: key);
@@ -59,7 +60,12 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   Widget _submitButton() {
-    return Container(
+    return InkWell(
+      onTap: () {
+        Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()));
+      },
+      child: Container(
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.symmetric(vertical: 15),
       alignment: Alignment.center,
@@ -79,6 +85,7 @@ class _SignUpPageState extends State<SignUpPage> {
       child: Text(
         'Cadastrar',
         style: TextStyle(fontSize: 20, color: Colors.white),
+      ),
       ),
     );
   }
@@ -119,23 +126,14 @@ class _SignUpPageState extends State<SignUpPage> {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-          text: 'd',
-          style: GoogleFonts.portLligatSans(
+          text: 'REALIZAR CADASTRO',
+          style: GoogleFonts.alice(
             textStyle: Theme.of(context).textTheme.display1,
-            fontSize: 30,
+            fontSize: 42,
             fontWeight: FontWeight.w700,
             color: Color(0xffe46b10),
           ),
-          children: [
-            TextSpan(
-              text: 'ev',
-              style: TextStyle(color: Colors.black, fontSize: 30),
-            ),
-            TextSpan(
-              text: 'rnz',
-              style: TextStyle(color: Color(0xffe46b10), fontSize: 30),
-            ),
-          ]),
+        ),
     );
   }
 
