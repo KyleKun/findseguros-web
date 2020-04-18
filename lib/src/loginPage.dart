@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hackagr1d_web/src/home.dart';
 import 'package:hackagr1d_web/src/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hackagr1d_web/src/profilePage.dart';
+import 'navBar.dart';
 import 'Widget/bezierContainer.dart';
 
 class LoginPage extends StatefulWidget {
@@ -63,8 +65,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget _submitButton() {
     return InkWell(
       onTap: () {
+        is_landing_page = false;
         Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ProfilePage()));
+                  MaterialPageRoute(builder: (context) => Home()));
       },
       child:Container(
       width: MediaQuery.of(context).size.width,
