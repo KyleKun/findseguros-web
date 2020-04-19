@@ -18,7 +18,7 @@ class _CardHomeState extends State<CardHome> {
           padding: EdgeInsets.all(5),
           child: Container(
             height: 180,
-            width: double.infinity,
+            width: 800,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,

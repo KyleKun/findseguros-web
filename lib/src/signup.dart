@@ -159,7 +159,7 @@ class _SignUpPageState extends State<SignUpPage> {
       textAlign: TextAlign.center,
       text: TextSpan(
           text: 'CADASTRO',
-          style: GoogleFonts.alice(
+          style: GoogleFonts.roboto(
             textStyle: Theme.of(context).textTheme.display1,
             fontSize: 42,
             fontWeight: FontWeight.w700,
@@ -185,6 +185,7 @@ class _SignUpPageState extends State<SignUpPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child:Container(
+          width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child:Stack(
             children: <Widget>[

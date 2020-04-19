@@ -18,7 +18,7 @@ class _CardLifeState extends State<CardLife> {
           padding: EdgeInsets.all(5),
           child: Container(
             height: 180,
-            width: double.infinity,
+            width: 800,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +38,7 @@ class _CardLifeState extends State<CardLife> {
                       Container(
                           margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                           child: Text(
-                              "Quando se trata da nossa família, não podemos deixar pra depois. Confira algumas opções de seguro de vida para o seu perfil.",
+                              "Quando se trata da nossa família, não podemos deixar pra depois.\nConfira algumas opções de seguro de vida para o seu perfil.",
                               style:
                                   TextStyle(fontSize: 14, color: Colors.white),
                                   ),

@@ -39,8 +39,12 @@ class _HomeState extends State<Home> {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => AddInfo()));
                     },
                   ),
-                  GestureDetector(child: CardHome(), onTap: (){},),
-                  GestureDetector(child: CardLife(), onTap: (){},),
+                  GestureDetector(child: CardHome(), onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => AddInfo()));
+                  },),
+                  GestureDetector(child: CardLife(), onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => AddInfo()));
+                  },),
                   Container(
                     margin: EdgeInsets.all(15),
                     child: Text(

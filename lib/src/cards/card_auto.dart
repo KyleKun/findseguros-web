@@ -18,11 +18,13 @@ class _CardAutoState extends State<CardAuto> {
           padding: EdgeInsets.all(5),
           child: Container(
             height: 180,
-            width: double.infinity,
+            width: 800,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Expanded(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Container(
@@ -36,7 +38,7 @@ class _CardAutoState extends State<CardAuto> {
                       Container(
                           margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                           child: Text(
-                              "Buscando seguro para o seu Auto? Que tal conferir nossas melhores opções de seguro?",
+                              "Buscando seguro para o seu Auto? Que tal conferir as nossas\nmelhores opções de seguro e conhecer nossos benefícios?",
                               style:
                                   TextStyle(fontSize: 14, color: Colors.white))), 
                       SizedBox(height: 8,),

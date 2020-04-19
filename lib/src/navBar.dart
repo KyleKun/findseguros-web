@@ -44,14 +44,7 @@ class DesktopNavbar extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => WelcomePage()));
               },
               child: 
-            Text(
-              "FindSeguros",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: palleteBlue,
-                  fontSize: 30,
-                  letterSpacing: 2),
-            ),),
+            Image.asset("NavBar_FindSeguros.png")),
             Row(
               children: <Widget>[
                 FlatButton(child: Text("Menu Principal"), onPressed: (){
@@ -112,11 +105,7 @@ class MobileNavbar extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => WelcomePage()));
               },
               child:
-          Text(
-            "FindSeguros",
-            style: TextStyle(
-                fontWeight: FontWeight.bold, color: palleteBlue, fontSize: 30, letterSpacing: 2),
-          ),),
+          Image.asset("NavBar_FindSeguros.png")),
           Padding(
             padding: const EdgeInsets.all(12.0),
             child: Row(

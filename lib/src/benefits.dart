@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hackagr1d_web/src/navBar.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 Color palleteLightGrey = Color(0xffc4d1fa);
 Color palleteLightBlue = Color(0xff4286F4);
@@ -26,37 +27,38 @@ class _BenefitsPage extends State<BenefitsPage> {
                 margin: EdgeInsets.symmetric(
                     horizontal: ScreenUtil().setWidth(120)),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Navbar(),
                     SizedBox(
                       height: ScreenUtil().setHeight(50),
                     ),
                     Container(
-        height: 150,
-        width: 300,
-        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        decoration: BoxDecoration(
-            color: palleteLightBlue,
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                  offset: Offset(0, 5),
-                  blurRadius: 10,
-                  color: Color(0x12000000))
-            ]),
-            child: Center(
-              child: 
-              Text(
-                'Seus pontos: \n 330',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                  fontFamily: 'Rubik',
-                ),
-              ),)
-        ),
+                    height: 150,
+                    width: 300,
+                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: palleteLightBlue,
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                            offset: Offset(0, 5),
+                            blurRadius: 10,
+                            color: Color(0x12000000))
+                      ]),
+                      child: Center(
+                        child: 
+                        Text(
+                          'Seus pontos: \n 330',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontFamily: 'Rubik',
+                          ),
+                        ),)
+                      ),
 
                     SizedBox(height: 40,),
                       Row(
@@ -98,42 +100,97 @@ class _BenefitsPage extends State<BenefitsPage> {
                         Container(
                             color: Color.fromRGBO(243, 245, 248, 1),
                             child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
-                                Expanded(
-                                  child: Column (
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: <Widget>[
-                                      Container(
-                                        constraints: BoxConstraints.expand(
-                              height: 100.0,
-                            ),
-                                        )],
-                                  )
-                                  ),
-                                  new Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 0, 50, 0 ),
-                                     child: Text('10\% de desconto em \n seguro de vida!',
+                                  Text('10\% de desconto em \n seguro de vida!',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontFamily: 'Rubik',
                               color: palleteMediumBlue,
-                              fontSize: 12
+                              fontSize: 22
                             ),
                             ),
-                                    ),
-                          Padding(
-                           padding: EdgeInsets.fromLTRB(0, 0, 10, 0 ),
-                          child:
+                          SizedBox(width: 8),
+                                    
+                          
                           FlatButton(
                           color: palleteLightBlue,
-                          onPressed: () {}, 
+                          onPressed: () {
+                            Alert(
+                                  context: context,
+                                  type: AlertType.error,
+                                  title: 'Pontos insuficientes!',
+                                  desc: 'Não desanime! Você ganhará mais pontos ao longo do tempo e também ao contratar novos seguros.',
+                                  buttons: [
+                                    DialogButton(
+                                      color: Colors.green,
+                                      width: 200.0,
+                                      child: Text(
+                                        'OK',
+                                        style: TextStyle(fontSize: 18.0, color: Colors.white),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                        setState(() {
+
+                                              FocusScope.of(context).requestFocus(new FocusNode());
+                                        });
+                          },
+                        ),
+                      ],
+                    ).show();
+                          }, 
                           child: Text(
                             'Adquirir \n 970 pontos',
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.white, fontFamily: 'Rubik',),
                             )
-                          )
-                          )
+                          ),
+                          SizedBox(width: 10),
+                          IconButton(
+                            icon: Icon(Icons.info_outline), 
+                            onPressed: (){
+                            Alert(
+                                  context: context,
+                                  type: AlertType.warning,
+                                  title: '1 Reparo Residencial GRATUITO',
+                                  desc: 'Este benefício te dá o direito de receber a visita de um técnico especializado vinculado ao seguro residencial "xyz"!\nPara maiores informações veja a página do produto dessa seguradora.',
+                                  buttons: [
+                                    DialogButton(
+                                      color: Colors.green,
+                                      width: 200.0,
+                                      child: Text(
+                                        'OK',
+                                        style: TextStyle(fontSize: 18.0, color: Colors.white),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                        setState(() {
+
+                                              FocusScope.of(context).requestFocus(new FocusNode());
+                                        });
+                          },
+                        ),
+                        DialogButton(
+                                      color: Colors.orange,
+                                      width: 200.0,
+                                      child: Text(
+                                        'VER PRODUTO',
+                                        style: TextStyle(fontSize: 18.0, color: Colors.white),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                        setState(() {
+
+                                              FocusScope.of(context).requestFocus(new FocusNode());
+                                        });
+                                      }
+                        ),
+                      ],
+                    ).show();
+                          }),
+                          
                               ],
                             )
                           ),
@@ -178,32 +235,18 @@ class _BenefitsPage extends State<BenefitsPage> {
                         Container(
                             color: Color.fromRGBO(243, 245, 248, 1),
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Expanded(
-                                  child: Column (
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: <Widget>[
-                                      Container(
-                                        constraints: BoxConstraints.expand(
-                              height: 100.0,
+                                 Text('1 Reparo Residencial',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Rubik',
+                                        color: palleteMediumBlue,
+                                        fontSize: 22
                             ),
-                                        )],
-                                  )
-                                  ),
-                                  new Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 0, 50, 0 ),
-                                     child: Text('5\% de desconto em \n seguro residencial!',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Rubik',
-                              color: palleteMediumBlue,
-                              fontSize: 12
-                            ),
-                            ),
-                                    ),
-                          Padding(
-                           padding: EdgeInsets.fromLTRB(0, 0, 10, 0 ),
-                          child:
+                          ),
+                          SizedBox(width: 8),
                           FlatButton(
                           color: Colors.grey[600],
                           onPressed: () {}, 
@@ -212,8 +255,51 @@ class _BenefitsPage extends State<BenefitsPage> {
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.white, fontFamily: 'Rubik',),
                             )
-                          )
-                          )
+                          
+                          ),
+                          SizedBox(width: 10),
+                          IconButton(
+                            icon: Icon(Icons.info_outline), 
+                            onPressed: (){
+                            Alert(
+                                  context: context,
+                                  type: AlertType.warning,
+                                  title: '1 Reparo Residencial GRATUITO',
+                                  desc: 'Este benefício te dá o direito de receber a visita de um técnico especializado vinculado ao seguro residencial "xyz"\nPara maiores informações veja a página do produto dessa seguradora.',
+                                  buttons: [
+                                    DialogButton(
+                                      color: Colors.green,
+                                      width: 200.0,
+                                      child: Text(
+                                        'OK',
+                                        style: TextStyle(fontSize: 18.0, color: Colors.white),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                        setState(() {
+
+                                              FocusScope.of(context).requestFocus(new FocusNode());
+                                        });
+                          },
+                        ),
+                        DialogButton(
+                                      color: Colors.orange,
+                                      width: 200.0,
+                                      child: Text(
+                                        'VER PRODUTO',
+                                        style: TextStyle(fontSize: 18.0, color: Colors.white),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                        setState(() {
+
+                                              FocusScope.of(context).requestFocus(new FocusNode());
+                                        });
+                                      }
+                        ),
+                      ],
+                    ).show();
+                          })
                               ],
                             )
                           ),
@@ -221,32 +307,18 @@ class _BenefitsPage extends State<BenefitsPage> {
                            Container(
                             color: Color.fromRGBO(243, 245, 248, 1),
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
-                                Expanded(
-                                  child: Column (
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: <Widget>[
-                                      Container(
-                                        constraints: BoxConstraints.expand(
-                              height: 100.0,
+                                 Text('20\$ de cashback',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontFamily: 'Rubik',
+                                        color: palleteMediumBlue,
+                                        fontSize: 22
                             ),
-                                        )],
-                                  )
-                                  ),
-                                  new Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 0, 50, 0 ),
-                                     child: Text('20\$ de cashback',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontFamily: 'Rubik',
-                              color: palleteMediumBlue,
-                              fontSize: 12
-                            ),
-                            ),
-                                    ),
-                          Padding(
-                           padding: EdgeInsets.fromLTRB(0, 0, 10, 0 ),
-                          child:
+                          ),
+                          SizedBox(width: 50),
                           FlatButton(
                           color: Colors.grey[600],
                           onPressed: () {}, 
@@ -255,8 +327,51 @@ class _BenefitsPage extends State<BenefitsPage> {
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.white, fontFamily: 'Rubik',),
                             )
-                          )
-                          )
+                          
+                          ),
+                          SizedBox(width: 10),
+                          IconButton(
+                            icon: Icon(Icons.info_outline), 
+                            onPressed: (){
+                            Alert(
+                                  context: context,
+                                  type: AlertType.warning,
+                                  title: '1 Reparo Residencial GRATUITO',
+                                  desc: 'Este benefício te dá o direito de receber a visita de um técnico especializado vinculado ao seguro residencial "xyz"\nPara maiores informações veja a página do produto dessa seguradora.',
+                                  buttons: [
+                                    DialogButton(
+                                      color: Colors.green,
+                                      width: 200.0,
+                                      child: Text(
+                                        'OK',
+                                        style: TextStyle(fontSize: 18.0, color: Colors.white),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                        setState(() {
+
+                                              FocusScope.of(context).requestFocus(new FocusNode());
+                                        });
+                          },
+                        ),
+                        DialogButton(
+                                      color: Colors.orange,
+                                      width: 200.0,
+                                      child: Text(
+                                        'VER PRODUTO',
+                                        style: TextStyle(fontSize: 18.0, color: Colors.white),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                        setState(() {
+
+                                              FocusScope.of(context).requestFocus(new FocusNode());
+                                        });
+                                      }
+                        ),
+                      ],
+                    ).show();
+                          }),
                               ],
                             )
                           ),

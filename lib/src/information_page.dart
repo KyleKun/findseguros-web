@@ -14,27 +14,6 @@ class _InformationPageState extends State<InformationPage>
     with SingleTickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
-  final FocusNode myFocusNodeEmailLogin = FocusNode();
-  final FocusNode myFocusNodePasswordLogin = FocusNode();
-
-  final FocusNode myFocusNodePassword = FocusNode();
-  final FocusNode myFocusNodeEmail = FocusNode();
-  final FocusNode myFocusNodeName = FocusNode();
-
-  TextEditingController loginEmailController = new TextEditingController();
-  TextEditingController loginPasswordController = new TextEditingController();
-
-  bool _obscureTextLogin = true;
-  bool _obscureTextSignup = true;
-  bool _obscureTextSignupConfirm = true;
-
-  TextEditingController signupEmailController = new TextEditingController();
-  TextEditingController signupCnpjController = new TextEditingController();
-  TextEditingController signupNameController = new TextEditingController();
-  TextEditingController signupPasswordController = new TextEditingController();
-  TextEditingController signupConfirmPasswordController =
-      new TextEditingController();
-
   PageController _pageController;
 
   Color left = Colors.black;
@@ -50,20 +29,20 @@ class _InformationPageState extends State<InformationPage>
         },
         child: SingleChildScrollView(
           child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height >= 745.0
-                ? MediaQuery.of(context).size.height
-                : 775.0,
             decoration: new BoxDecoration(
               gradient: new LinearGradient(
                   colors: [
-                    Color(0xff7FA4F7), Color(0xff4286F4)
+                    Colors.lightBlue[300], Colors.lightBlue[200],
                   ],
                   begin: const FractionalOffset(0.0, 0.0),
                   end: const FractionalOffset(1.0, 1.0),
                   stops: [0.0, 1.0],
                   tileMode: TileMode.clamp),
             ),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height >= 745.0
+                ? MediaQuery.of(context).size.height
+                : 775.0,
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
@@ -72,12 +51,13 @@ class _InformationPageState extends State<InformationPage>
                   padding: EdgeInsets.only(top: 35.0),
                 ),
                 Center(
-                  child: Text('TODO -> COTAÇÕES',
+                  child: Text('COTAÇÕES',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Rubik',
-                    fontSize: 24,
-                    color: Colors.white
+                    fontSize: 28,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
                   ),
                   ),
@@ -117,9 +97,6 @@ class _InformationPageState extends State<InformationPage>
 
   @override
   void dispose() {
-    myFocusNodePassword.dispose();
-    myFocusNodeEmail.dispose();
-    myFocusNodeName.dispose();
     _pageController?.dispose();
     super.dispose();
   }
@@ -168,13 +145,20 @@ class _InformationPageState extends State<InformationPage>
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Container(
-                  width: 340.0,
-                  height: 245.0,
+                  width: 540.0,
+                  height: 305.0,
                   child: Column(
                     children: <Widget>[
+                      SizedBox(height: 20),
+                      Text("Plano ABC",
+                      style: TextStyle(
+                         fontFamily: "Rubik",
+                         fontSize: 22.0,
+                         fontWeight: FontWeight.bold,
+                      ),),
                       Padding(
                         padding: EdgeInsets.only(
-                            top: 20.0, left: 25.0, right: 25.0),
+                            top: 10.0, left: 25.0, right: 25.0),
                         child: TextField(
                           readOnly: true,
                           style: TextStyle(
@@ -187,7 +171,7 @@ class _InformationPageState extends State<InformationPage>
                               Icons.check,
                               color: Colors.green,
                             ),
-                            hintText: "Pode queimar sua casa",
+                            hintText: "Descontos especiais",
                             hintStyle: TextStyle(
                                 fontFamily: "Rubik", fontSize: 16.0, color: Colors.black),
                           ),
@@ -195,7 +179,7 @@ class _InformationPageState extends State<InformationPage>
                       ),
                        Padding(
                         padding: EdgeInsets.only(
-                            top: 20.0, left: 25.0, right: 25.0),
+                            top: 2.0, left: 25.0, right: 25.0),
                         child: TextField(
                           readOnly: true,
                           style: TextStyle(
@@ -208,7 +192,7 @@ class _InformationPageState extends State<InformationPage>
                               Icons.check,
                               color: Colors.green,
                             ),
-                            hintText: "Compra outra casa",
+                            hintText: "Seu carro ganha asas",
                             hintStyle: TextStyle(
                                 fontFamily: "Rubik", fontSize: 16.0, color: Colors.black),
                           ),
@@ -216,7 +200,7 @@ class _InformationPageState extends State<InformationPage>
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                            top: 20.0, left: 25.0, right: 25.0),
+                            top: 2.0, left: 25.0, right: 25.0),
                         child: TextField(
                           readOnly: true,
                           style: TextStyle(
@@ -229,29 +213,38 @@ class _InformationPageState extends State<InformationPage>
                               Icons.check,
                               color: Colors.green,
                             ),
-                            hintText: "Se livra da imobiliária",
+                            hintText: "Cobertura contra roubo e furto",
                             hintStyle: TextStyle(
                                 fontFamily: "Rubik", fontSize: 16.0, color: Colors.black),
                           ),
                         ),
                       ),
+                      SizedBox(height: 8),
+                      Text('R\$ xxx,xx mensais',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),),
+                      SizedBox(height: 5),
+                      MaterialButton(
+                        color: Colors.green,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20.0))),
+                        onPressed: () {
+                          
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => InformationPage()));
+                          
+                        },
+                        child: Text(
+                          "Contratar" ,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      )
                     ],
                   ),
                 ),
               ),
             ],
           ),
-                  SizedBox(height: 30),
-                  Center(
-                  child: Text('Quem NÃO possui \n seguro de residência',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Rubik',
-                    fontSize: 24,
-                    color: Colors.white
-                  ),
-                  ),
-                  ),
+                  
+                  
                    SizedBox(height: 30),
 
                   Stack(
@@ -265,13 +258,20 @@ class _InformationPageState extends State<InformationPage>
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Container(
-                  width: 340.0,
-                  height: 245.0,
+                  width: 540.0,
+                  height: 305.0,
                   child: Column(
                     children: <Widget>[
+                      SizedBox(height: 20),
+                      Text("Plano XYZ",
+                      style: TextStyle(
+                         fontFamily: "Rubik",
+                         fontSize: 22.0,
+                         fontWeight: FontWeight.bold,
+                      ),),
                       Padding(
                         padding: EdgeInsets.only(
-                            top: 20.0, left: 25.0, right: 25.0),
+                            top: 10.0, left: 25.0, right: 25.0),
                         child: TextField(
                           readOnly: true,
                           style: TextStyle(
@@ -281,10 +281,10 @@ class _InformationPageState extends State<InformationPage>
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             icon: Icon(
-                              Icons.close,
-                              color: Colors.red,
+                              Icons.check,
+                              color: Colors.green,
                             ),
-                            hintText: "Não pode queimar sua casa",
+                            hintText: "Cobertura contra roubo e furto",
                             hintStyle: TextStyle(
                                 fontFamily: "Rubik", fontSize: 16.0, color: Colors.black),
                           ),
@@ -292,7 +292,7 @@ class _InformationPageState extends State<InformationPage>
                       ),
                        Padding(
                         padding: EdgeInsets.only(
-                            top: 20.0, left: 25.0, right: 25.0),
+                            top: 2.0, left: 25.0, right: 25.0),
                         child: TextField(
                           readOnly: true,
                           style: TextStyle(
@@ -305,7 +305,7 @@ class _InformationPageState extends State<InformationPage>
                               Icons.close,
                               color: Colors.red,
                             ),
-                            hintText: "Não pode comprar outra",
+                            hintText: "Seu carro vira um Ferrari",
                             hintStyle: TextStyle(
                                 fontFamily: "Rubik", fontSize: 16.0, color: Colors.black),
                           ),
@@ -313,7 +313,7 @@ class _InformationPageState extends State<InformationPage>
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                            top: 20.0, left: 25.0, right: 25.0),
+                            top: 2.0, left: 25.0, right: 25.0),
                         child: TextField(
                           readOnly: true,
                           style: TextStyle(
@@ -323,15 +323,33 @@ class _InformationPageState extends State<InformationPage>
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             icon: Icon(
-                              Icons.close,
-                              color: Colors.red,
+                              Icons.check,
+                              color: Colors.green,
                             ),
-                            hintText: "Não se libra da imobiliaria",
+                            hintText: "Primeira anuidade grátis",
                             hintStyle: TextStyle(
                                 fontFamily: "Rubik", fontSize: 16.0, color: Colors.black),
                           ),
                         ),
                       ),
+                      SizedBox(height: 8),
+                      Text('R\$ xxx,xx mensais',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),),
+                      SizedBox(height: 5),
+                      MaterialButton(
+                        color: Colors.green,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20.0))),
+                        onPressed: () {
+                          
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => InformationPage()));
+                          
+                        },
+                        child: Text(
+                          "Contratar" ,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      )
                     ],
                   ),
                 ),

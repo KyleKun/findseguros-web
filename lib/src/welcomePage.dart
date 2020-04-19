@@ -145,7 +145,7 @@ Padding(
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
          children: <Widget>[
-          Text('\nPacotes e\npromoções\nbaseados em\nseu perfil'),
+          Text('\nPacotes e\npromoções\nbaseados\nno seu perfil'),
           SizedBox(width: 60,),
           Text('Ganhe descontos\ne benefícios\nexclusivos'),
           SizedBox(width: 60,),
