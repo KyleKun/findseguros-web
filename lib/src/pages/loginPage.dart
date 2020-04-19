@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hackagr1d_web/src/home.dart';
-import 'package:hackagr1d_web/src/signup.dart';
+import 'package:hackagr1d_web/src/pages/home.dart';
+import 'package:hackagr1d_web/src/pages/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hackagr1d_web/src/profilePage.dart';
-import 'navBar.dart';
-import 'Widget/bezierContainer.dart';
+import 'package:hackagr1d_web/src/pages/profilePage.dart';
+import '../navBar.dart';
+import '../Widget/bezierContainer.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.title}) : super(key: key);
@@ -131,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
       textAlign: TextAlign.center,
       text: TextSpan(
           text: 'ENTRAR',
-          style: GoogleFonts.alice(
+          style: GoogleFonts.roboto(
             textStyle: Theme.of(context).textTheme.display1,
             fontSize: 42,
             fontWeight: FontWeight.w700,

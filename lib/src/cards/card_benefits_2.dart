@@ -4,6 +4,8 @@ class CardBeneficio2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 50,
+      width: 800,
       margin: EdgeInsets.fromLTRB(15, 0, 15, 15),
       child: Material(
         elevation: 2,
@@ -29,7 +31,7 @@ class CardBeneficio2 extends StatelessWidget {
                     children: <Widget>[
                       Container(
                         margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                        child: Text("Receba promoções exclusivas! Seja premiado conforme seu histórico.",
+                        child: Text("Os melhores preços para você! Com facilidade e agilidade.",
                             style: TextStyle(
                                 fontSize: 14,
                                 color: Colors.black,

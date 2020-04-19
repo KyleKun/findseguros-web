@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hackagr1d_web/src/loginPage.dart';
-import 'package:hackagr1d_web/src/signup.dart';
+import 'package:hackagr1d_web/src/pages/loginPage.dart';
+import 'package:hackagr1d_web/src/pages/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';

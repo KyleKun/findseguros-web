@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:hackagr1d_web/src/benefits.dart';
+import 'package:hackagr1d_web/src/pages/benefits.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 Color palleteLightGrey = Color(0xffc4d1fa);
@@ -172,7 +172,7 @@ class MapScreenState extends State<ProfilePage>
                               new Flexible(
                                 child: new TextField(
                                   decoration: const InputDecoration(
-                                    hintText: "João Silva",
+                                    hintText: "Caio Pedroso",
                                   ),
                                   enabled: !_status,
                                   autofocus: !_status,
@@ -210,7 +210,7 @@ class MapScreenState extends State<ProfilePage>
                               new Flexible(
                                 child: new TextField(
                                   decoration: const InputDecoration(
-                                      hintText: "joao.silva.grid@gmail.com"),
+                                      hintText: "caio.pedroso.grid@gmail.com"),
                                   enabled: !_status,
                                 ),
                               ),

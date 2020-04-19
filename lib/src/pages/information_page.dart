@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hackagr1d_web/src/pages/final_route.dart';
 import 'package:hackagr1d_web/src/navBar.dart';
 
 
@@ -32,7 +33,7 @@ class _InformationPageState extends State<InformationPage>
             decoration: new BoxDecoration(
               gradient: new LinearGradient(
                   colors: [
-                    Colors.lightBlue[300], Colors.lightBlue[200],
+                    Colors.lightBlue[100], Colors.lightBlue[300],
                   ],
                   begin: const FractionalOffset(0.0, 0.0),
                   end: const FractionalOffset(1.0, 1.0),
@@ -220,7 +221,7 @@ class _InformationPageState extends State<InformationPage>
                         ),
                       ),
                       SizedBox(height: 8),
-                      Text('R\$ xxx,xx mensais',
+                      Text('R\$ xxx, xx mensais',
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),),
                       SizedBox(height: 5),
                       MaterialButton(
@@ -229,7 +230,7 @@ class _InformationPageState extends State<InformationPage>
                             borderRadius: BorderRadius.all(Radius.circular(20.0))),
                         onPressed: () {
                           
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => InformationPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => FinalRoute()));
                           
                         },
                         child: Text(
@@ -333,7 +334,7 @@ class _InformationPageState extends State<InformationPage>
                         ),
                       ),
                       SizedBox(height: 8),
-                      Text('R\$ xxx,xx mensais',
+                      Text('R\$ xxx, xx mensais',
                       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),),
                       SizedBox(height: 5),
                       MaterialButton(
@@ -342,7 +343,7 @@ class _InformationPageState extends State<InformationPage>
                             borderRadius: BorderRadius.all(Radius.circular(20.0))),
                         onPressed: () {
                           
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => InformationPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => FinalRoute()));
                           
                         },
                         child: Text(

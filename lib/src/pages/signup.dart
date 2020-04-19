@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hackagr1d_web/src/Widget/bezierContainer.dart';
-import 'package:hackagr1d_web/src/home.dart';
-import 'package:hackagr1d_web/src/loginPage.dart';
+import 'package:hackagr1d_web/src/pages/home.dart';
+import 'package:hackagr1d_web/src/pages/loginPage.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'navBar.dart';
+import '../navBar.dart';
 import 'profilePage.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
@@ -77,7 +77,7 @@ class _SignUpPageState extends State<SignUpPage> {
           context: context,
           type: AlertType.success,
           title: 'Cadastro realizado!',
-          desc: 'Bem vindo(a) João!\nPara começar, que tal dar uma olhada em nosso pacotes?',
+          desc: 'Bem vindo(a) Caio!\nPara começar, que tal dar uma olhada em nosso pacotes?',
           buttons: [
             DialogButton(
               color: Colors.green,
@@ -163,7 +163,7 @@ class _SignUpPageState extends State<SignUpPage> {
             textStyle: Theme.of(context).textTheme.display1,
             fontSize: 42,
             fontWeight: FontWeight.w700,
-            color: palleteBlue,
+            color: palleteMediumBlue,
           ),
         ),
     );
@@ -187,9 +187,13 @@ class _SignUpPageState extends State<SignUpPage> {
         child:Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child:Stack(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+               _backButton(),
               Container(
+                width: 600,
+                height: 545,
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -201,7 +205,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     _title(),
                     SizedBox(
-                      height: 50,
+                      height: 30,
                     ),
                     _emailPasswordWidget(),
                     SizedBox(
@@ -214,7 +218,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         context: context,
                         type: AlertType.success,
                         title: 'Cadastro realizado!',
-                        desc: 'Bem vindo(a) João!\nPara começar, que tal dar uma olhada em nosso pacotes?',
+                        desc: 'Bem vindo(a) Caio!\nPara começar, que tal dar uma olhada em nosso pacotes?',
                         buttons: [
                           DialogButton(
                             color: Colors.green,
@@ -250,7 +254,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         gradient: LinearGradient(
                             begin: Alignment.centerLeft,
                             end: Alignment.centerRight,
-                            colors: [palleteBlue, palleteMediumBlue])),
+                            colors: [palleteMediumBlue, palleteLightBlue])),
                     child: Text(
                       'Cadastrar',
                       style: TextStyle(fontSize: 20, color: Colors.white),
@@ -268,7 +272,6 @@ class _SignUpPageState extends State<SignUpPage> {
                 alignment: Alignment.bottomCenter,
                 child: _loginAccountLabel(),
               ),
-              Positioned(top: 40, left: 0, child: _backButton()),
             ],
           ),
         )

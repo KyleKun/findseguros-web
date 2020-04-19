@@ -9,6 +9,8 @@ class _CardBeneficio1State extends State<CardBeneficio1> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 50,
+      width: 800,
       margin: EdgeInsets.fromLTRB(15, 0, 15, 15),
       child: Material(
         elevation: 2,

@@ -1,4 +1,4 @@
-import 'package:hackagr1d_web/src/add_info.dart';
+import 'package:hackagr1d_web/src/pages/add_info.dart';
 import 'package:hackagr1d_web/src/cards/card_benefits_1.dart';
 import 'package:hackagr1d_web/src/cards/card_benefits_2.dart';
 import 'package:hackagr1d_web/src/cards/card_auto.dart';
@@ -6,7 +6,8 @@ import 'package:hackagr1d_web/src/cards/card_home.dart';
 import 'package:hackagr1d_web/src/cards/card_2.dart';
 import 'package:flutter/material.dart';
 import 'package:hackagr1d_web/src/cards/card_life.dart';
-import 'package:hackagr1d_web/src/information_page.dart';
+import 'package:hackagr1d_web/src/pages/benefits.dart';
+import 'package:hackagr1d_web/src/pages/information_page.dart';
 import 'package:hackagr1d_web/src/navBar.dart';
 
 class Home extends StatefulWidget {
@@ -52,8 +53,12 @@ class _HomeState extends State<Home> {
                       style: TextStyle(color: Color(0xff4286F4), fontSize: 16),
                     ),
                   ),
-                  GestureDetector(child: CardBeneficio1(), onTap: (){},),
-                  GestureDetector(child: CardBeneficio2(), onTap: (){},)
+                  GestureDetector(child: CardBeneficio1(), onTap: (){
+Navigator.push(context, MaterialPageRoute(builder: (context) => BenefitsPage()));
+                  },),
+                  GestureDetector(child: CardBeneficio2(), onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => AddInfo()));
+                  },)
                 ],
               ),
             ));

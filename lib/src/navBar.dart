@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hackagr1d_web/src/home.dart';
-import 'package:hackagr1d_web/src/loginPage.dart';
-import 'package:hackagr1d_web/src/profilePage.dart';
-import 'package:hackagr1d_web/src/benefits.dart';
+import 'package:hackagr1d_web/src/pages/home.dart';
+import 'package:hackagr1d_web/src/pages/loginPage.dart';
+import 'package:hackagr1d_web/src/pages/profilePage.dart';
+import 'package:hackagr1d_web/src/pages/benefits.dart';
 import 'package:hackagr1d_web/src/welcomePage.dart';
 
 Color palleteLightGrey = Color(0xffc4d1fa);
