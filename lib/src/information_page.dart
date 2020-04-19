@@ -72,7 +72,7 @@ class _InformationPageState extends State<InformationPage>
                   padding: EdgeInsets.only(top: 35.0),
                 ),
                 Center(
-                  child: Text('Benefícios do \n seguro de residência',
+                  child: Text('TODO -> COTAÇÕES',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Rubik',

@@ -1,11 +1,13 @@
+import 'package:hackagr1d_web/src/add_info.dart';
 import 'package:hackagr1d_web/src/cards/card_benefits_1.dart';
 import 'package:hackagr1d_web/src/cards/card_benefits_2.dart';
-import 'package:hackagr1d_web/src/cards/card_1.dart';
+import 'package:hackagr1d_web/src/cards/card_auto.dart';
+import 'package:hackagr1d_web/src/cards/card_home.dart';
 import 'package:hackagr1d_web/src/cards/card_2.dart';
 import 'package:flutter/material.dart';
+import 'package:hackagr1d_web/src/cards/card_life.dart';
 import 'package:hackagr1d_web/src/information_page.dart';
 import 'package:hackagr1d_web/src/navBar.dart';
-import 'package:hackagr1d_web/src/profilePage.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -28,16 +30,17 @@ class _HomeState extends State<Home> {
                   Container(
                     margin: EdgeInsets.all(15),
                     child: Text(
-                      "Seus produtos",
+                      "Produtos em destaque",
                       style: TextStyle(color: Color(0xff4286F4), fontSize: 16),
                     ),
                   ),
                   GestureDetector(
-                    child: Card1(), onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => InformationPage()));
+                    child: CardAuto(), onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => AddInfo()));
                     },
                   ),
-                  GestureDetector(child: Card2(), onTap: (){},),
+                  GestureDetector(child: CardHome(), onTap: (){},),
+                  GestureDetector(child: CardLife(), onTap: (){},),
                   Container(
                     margin: EdgeInsets.all(15),
                     child: Text(

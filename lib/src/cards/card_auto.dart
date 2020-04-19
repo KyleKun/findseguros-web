@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Card1 extends StatefulWidget {
+class CardAuto extends StatefulWidget {
   @override
-  _Card1State createState() => _Card1State();
+  _CardAutoState createState() => _CardAutoState();
 }
 
-class _Card1State extends State<Card1> {
+class _CardAutoState extends State<CardAuto> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,26 +27,41 @@ class _Card1State extends State<Card1> {
                     children: <Widget>[
                       Container(
                         margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
-                        child: Text("Que tal ver nossas melhores ofertas?",
+                        child: Text("Seguro Auto",
                             style: TextStyle(
-                                fontSize: 22,
+                                fontSize: 32,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold)),
                       ),
                       Container(
                           margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
                           child: Text(
-                              "Buscando seguro para o seu Auto, Residência ou Vida? Que tal conferir nossas melhores opções de seguro?",
+                              "Buscando seguro para o seu Auto? Que tal conferir nossas melhores opções de seguro?",
                               style:
-                                  TextStyle(fontSize: 14, color: Colors.white)))
+                                  TextStyle(fontSize: 14, color: Colors.white))), 
+                      SizedBox(height: 8,),
+                      Material(
+                        elevation: 2,
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        child: Container(
+                          height: 40,
+                           width: 210,
+                            child: Center(
+                              child: Text("Ver cotações", 
+                              style: TextStyle(fontWeight: FontWeight.bold,),
+                              ),
+                            ),
+                          ),
+                        ),
                     ],
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.fromLTRB(0, 0, 22, 0),
+                  margin: EdgeInsets.fromLTRB(30, 0, 60, 0),
                   child: Icon(
-                    Icons.verified_user,
-                    size: 100,
+                    Icons.motorcycle,
+                    size: 120,
                     color: Colors.white,
                   ),
                 )

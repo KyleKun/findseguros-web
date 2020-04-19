@@ -45,11 +45,12 @@ class DesktopNavbar extends StatelessWidget {
               },
               child: 
             Text(
-              "Hackagr1d",
+              "FindSeguros",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: palleteBlue,
-                  fontSize: 30),
+                  fontSize: 30,
+                  letterSpacing: 2),
             ),),
             Row(
               children: <Widget>[
@@ -75,7 +76,7 @@ class DesktopNavbar extends StatelessWidget {
                   width: 30,
                 ),
                 MaterialButton(
-                  color: is_landing_page? palleteMediumBlue: Colors.red,
+                  color: is_landing_page? palleteMediumBlue: Color(0xffFF5455),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20.0))),
                   onPressed: () {
@@ -112,9 +113,9 @@ class MobileNavbar extends StatelessWidget {
               },
               child:
           Text(
-            "Hackagr1d",
+            "FindSeguros",
             style: TextStyle(
-                fontWeight: FontWeight.bold, color: palleteBlue, fontSize: 30),
+                fontWeight: FontWeight.bold, color: palleteBlue, fontSize: 30, letterSpacing: 2),
           ),),
           Padding(
             padding: const EdgeInsets.all(12.0),

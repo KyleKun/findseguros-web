@@ -5,6 +5,14 @@ import 'package:hackagr1d_web/src/loginPage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'navBar.dart';
 import 'profilePage.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+
+
+Color palleteLightGrey = Color(0xffc4d1fa);
+Color palleteLightBlue = Color(0xff4286F4);
+Color palleteMediumBlue = Color(0xff4286F4);
+Color palleteBlue = Color(0xff1144e8);
+
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key key, this.title}) : super(key: key);
@@ -65,8 +73,29 @@ class _SignUpPageState extends State<SignUpPage> {
     return InkWell(
       onTap: () {
         is_landing_page = false;
-        Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Home()));
+        Alert(
+          context: context,
+          type: AlertType.success,
+          title: 'Cadastro realizado!',
+          desc: 'Bem vindo(a) João!\nPara começar, que tal dar uma olhada em nosso pacotes?',
+          buttons: [
+            DialogButton(
+              color: Colors.green,
+              width: 200.0,
+              child: Text(
+                'Vamos lá!',
+                style: TextStyle(fontSize: 18.0, color: Colors.white),
+              ),
+              onPressed: () {
+                  Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Home()));
+                setState(() {
+                      FocusScope.of(context).requestFocus(new FocusNode());
+                });
+              },
+            ),
+          ],
+        );      
       },
       child: Container(
       width: MediaQuery.of(context).size.width,
@@ -84,7 +113,7 @@ class _SignUpPageState extends State<SignUpPage> {
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
-              colors: [Color(0xfffbb448), Color(0xfff7892b)])),
+              colors: [palleteBlue, palleteMediumBlue])),
       child: Text(
         'Cadastrar',
         style: TextStyle(fontSize: 20, color: Colors.white),
@@ -115,7 +144,7 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Text(
               'Login',
               style: TextStyle(
-                  color: Color(0xfff79c4f),
+                  color: palleteLightBlue,
                   fontSize: 13,
                   fontWeight: FontWeight.w600),
             ),
@@ -129,12 +158,12 @@ class _SignUpPageState extends State<SignUpPage> {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-          text: 'REALIZAR CADASTRO',
+          text: 'CADASTRO',
           style: GoogleFonts.alice(
             textStyle: Theme.of(context).textTheme.display1,
             fontSize: 42,
             fontWeight: FontWeight.w700,
-            color: Color(0xffe46b10),
+            color: palleteBlue,
           ),
         ),
     );
@@ -177,7 +206,56 @@ class _SignUpPageState extends State<SignUpPage> {
                     SizedBox(
                       height: 20,
                     ),
-                    _submitButton(),
+                    InkWell(
+                    onTap: () {
+                      is_landing_page = false;
+                      Alert(
+                        context: context,
+                        type: AlertType.success,
+                        title: 'Cadastro realizado!',
+                        desc: 'Bem vindo(a) João!\nPara começar, que tal dar uma olhada em nosso pacotes?',
+                        buttons: [
+                          DialogButton(
+                            color: Colors.green,
+                            width: 200.0,
+                            child: Text(
+                              'Vamos lá!',
+                              style: TextStyle(fontSize: 18.0, color: Colors.white),
+                            ),
+                            onPressed: () {
+                                Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) => Home()));
+                              setState(() {
+                                    FocusScope.of(context).requestFocus(new FocusNode());
+                              });
+                            },
+                          ),
+                        ],
+                      ).show();      
+                    },
+                    child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                              color: Colors.grey.shade200,
+                              offset: Offset(2, 4),
+                              blurRadius: 5,
+                              spreadRadius: 2)
+                        ],
+                        gradient: LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            colors: [palleteBlue, palleteMediumBlue])),
+                    child: Text(
+                      'Cadastrar',
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                    ),
+                  ),
                     Expanded(
                       flex: 2,
                       child: SizedBox(),
