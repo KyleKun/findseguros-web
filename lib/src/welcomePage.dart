@@ -101,7 +101,7 @@ class _WelcomePageState extends State<WelcomePage> {
 Padding(
         padding: const EdgeInsets.symmetric(vertical: 20.0),
         child: SizedBox(
-          height: 400.0,
+          height: 425.0,
           width: 700.0,
           child: Carousel(
             boxFit: BoxFit.cover,
@@ -116,9 +116,9 @@ Padding(
             showIndicator: true,
             indicatorBgPadding: 7.0,
             images: [
-              Image.asset("welcome_image.png", width: width,),
-              Image.asset("wallet.png", width: width,),
-              Image.asset("security.png", width: width),
+              Image.network("https://i.imgur.com/X7AJPJP.png", width: width,),
+              Image.network("https://i.imgur.com/Hplx5rq.png", width: width,),
+              Image.network("https://i.imgur.com/MpcMmZ7.png", width: width),
             ],
           ),
       ),
@@ -126,11 +126,11 @@ Padding(
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Image.asset("verified.png", width: 40,),
+        Image.network("https://i.imgur.com/qRFwgsH.png", width: 40,),
         SizedBox(width: 130,),
-        Image.asset("money.png", width: 40,),
+        Image.network("https://i.imgur.com/5S3ZsUP.png", width: 40,),
         SizedBox(width: 130,),
-        Image.asset("car.png", width: 40,),
+        Image.network("https://i.imgur.com/6bHFNmc.png", width: 40,),
       ],),
       SizedBox(height: 10,),
       //Container(color: Colors.purple, width: 500, height: 5,),

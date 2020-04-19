@@ -197,7 +197,7 @@ class _AddInfoState extends State<AddInfo> {
                   print(sit_receita);
                   print(modelo);
                 Alert(context: context,
-                image: Image.asset("apis.png"),
+                image: Image.network("https://i.imgur.com/iQ1FuwH.png"),
                         title: 'Confira seus dados',
                         desc: 'Utilização das APIs Procob e Infocar Codificação para validação de dados.\n\nNome: $nome\nSituação na receita: $sit_receita\n\nModelo: $modelo\nCor: $cor\nAno: $ano\nChassi: $chassi',
                         buttons: [

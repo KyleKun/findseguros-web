@@ -75,11 +75,10 @@ class MapScreenState extends State<ProfilePage>
                                 height: 140.0,
                                 decoration: new BoxDecoration(
                                   shape: BoxShape.circle,
-                                  image: new DecorationImage(
-                                    image: new ExactAssetImage(
-                                        'profile.png'),
-                                    fit: BoxFit.cover,
-                                  ),
+                                  image: DecorationImage(
+                                    image:
+                                    new NetworkImage("https://i.imgur.com/90UYstM.png"),
+                                    fit: BoxFit.cover),
                                 )),
                           ],
                         ),
