@@ -77,7 +77,7 @@ class _WelcomePageState extends State<WelcomePage> {
             Padding(padding: EdgeInsets.only(left: 20),
             child:
             MaterialButton(
-              color: palleteLightGrey,
+              color: palleteBlue,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(20.0))),
               onPressed: () {
